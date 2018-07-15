@@ -27,7 +27,14 @@ android {
     }
     // signing
     signingConfigs {
-        release {}
+        release {
+            Properties poperties = new Properties()
+            poperties.load(new FileInputStream('../../LetsCorp-SigningConfigs/config.properties'))
+            keyAlias 'key0'
+            storeFile file('../../../LetsCorp-SigningConfigs/letscorp.jks')
+            storePassword poperties.getProperty("storePassword")
+            keyPassword poperties.getProperty("keyPassword")
+        }
     }
     buildTypes {
         release {
@@ -48,15 +55,12 @@ android {
     productFlavors {
         dev {
             dimension "default"
-            buildConfigField "String", "HOST", "\"fapiao-dev.glority.cn\""
         }
         stage {
             dimension "default"
-            buildConfigField "String", "HOST", "\"fapiao-stg.glority.cn\""
         }
         prod {
             dimension "default"
-            buildConfigField "String", "HOST", "\"fapiao.glority.cn\""
         }
     }
     // use data binding
