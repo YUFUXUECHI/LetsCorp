@@ -31,7 +31,7 @@ public class PostListFragment extends CommonDaggerFragment<FragmentPostListBindi
 
     private final static String EXTRA_CATEGORY_INFO = "__key_extra_category_info";
 
-    private int currentPage = 0;
+    private int currentPage = 1;
 
     private boolean loading = false;
 
@@ -109,6 +109,7 @@ public class PostListFragment extends CommonDaggerFragment<FragmentPostListBindi
     }
 
     private void fetchPostItems(boolean refresh) {
+        LogUtils.d(currentPage);
         loading = true;
         letsCorpViewModel.fetchPostItems(categoryInfo, currentPage).observe(this, listResource -> {
             loading = false;
