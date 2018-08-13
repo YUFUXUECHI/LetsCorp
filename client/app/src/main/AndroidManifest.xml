@@ -7,9 +7,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/lou"
+        android:icon="@mipmap/letscorp"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/lou"
+        android:roundIcon="@mipmap/letscorp"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name=".PalmApp">
