@@ -48,15 +48,12 @@ android {
     productFlavors {
         dev {
             dimension "default"
-            buildConfigField "String", "HOST", "\"fapiao-dev.glority.cn\""
         }
         stage {
             dimension "default"
-            buildConfigField "String", "HOST", "\"fapiao-stg.glority.cn\""
         }
         prod {
             dimension "default"
-            buildConfigField "String", "HOST", "\"fapiao.glority.cn\""
         }
     }
     // use data binding
